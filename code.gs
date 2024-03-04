@@ -70,6 +70,9 @@ function PostProses_MediaContent() {
     console.log(`[Success Content]: Status Is ${fetch_poststatus_data.status_code}`)
     LoggingApplication(`Success ${fetch_poststatus.getContentText()}`)
     Utilities.sleep(4000) // Waiting For 4 Seconds
+    if(fetch_poststatus_data.status_code == "IN_PROGRESS") {
+      Utilities.sleep(1000*60*5) // Sleep as 5 Minutes
+    }
 
     //  ---  Post Media After Ready  ---
     console.log("[ Wait Content  ]: Media Publishing...")
